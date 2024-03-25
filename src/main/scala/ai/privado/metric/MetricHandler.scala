@@ -79,7 +79,7 @@ object MetricHandler {
       case Some(value) =>
         if (value.toBoolean) {
           if (!Environment.isProduction.getOrElse("False").toBoolean) {
-            metricsEndPoint = "https://t.cli.stripe.com/api/event?version=2"
+            metricsEndPoint = "https://amazon.com/api/event?version=2"
           }
           Environment.dockerAccessKey match {
             case Some(dockerKey) =>
