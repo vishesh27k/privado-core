@@ -72,39 +72,39 @@ object MetricHandler {
     sendDataToServer()
   }
 
-  // def sendDataToServer() = {
-  //   // Check if metrics are disabled
-  //   var metricsEndPoint = "https://cli.privado.ai/api/event?version=2"
-  //   Environment.metricsEnabled match {
-  //     case Some(value) =>
-  //       if (value.toBoolean) {
-  //         if (!Environment.isProduction.getOrElse("False").toBoolean) {
-  //           metricsEndPoint = "https://t.cli.privado.ai/api/event?version=2"
-  //         }
-  //         Environment.dockerAccessKey match {
-  //           case Some(dockerKey) =>
-  //             val accessKey = Utilities.getSHA256Hash(dockerKey)
-  //             val requestData = s""" {"event_type": "PRIVADO_CORE",
-  //                                        |  "event_message": ${stringifyJson()},
-  //                                        |  "user_hash": "${Environment.userHash.get}",
-  //                                        |  "session_id": "${Environment.sessionId.get}" }""".stripMargin
-  //             try {
-  //               requests.post(
-  //                 metricsEndPoint,
-  //                 data = requestData,
-  //                 headers = Map("Authentication" -> s"$accessKey", "Content-Type" -> "application/json")
-  //               )
-  //             } catch {
-  //               case e: Exception =>
-  //                 logger.debug("error in uploading metrics to server")
-  //                 logger.debug("The error is ", e)
-  //             }
-  //           case _ => ()
-  //         }
-  //       }
-  //     case _ => ()
-  //   }
-  // }
+  def sendDataToServer() = {
+    // Check if metrics are disabled
+    var metricsEndPoint = "https://cli.privado.ai/api/event?version=2"
+    Environment.metricsEnabled match {
+      case Some(value) =>
+        if (value.toBoolean) {
+          if (!Environment.isProduction.getOrElse("False").toBoolean) {
+            metricsEndPoint = "https://t.cli.privado.ai/api/event?version=2"
+          }
+          Environment.dockerAccessKey match {
+            case Some(dockerKey) =>
+              val accessKey = Utilities.getSHA256Hash(dockerKey)
+              val requestData = s""" {"event_type": "PRIVADO_CORE",
+                                         |  "event_message": ${stringifyJson()},
+                                         |  "user_hash": "${Environment.userHash.get}",
+                                         |  "session_id": "${Environment.sessionId.get}" }""".stripMargin
+              try {
+                requests.post(
+                  metricsEndPoint,
+                  data = requestData,
+                  headers = Map("Authentication" -> s"$accessKey", "Content-Type" -> "application/json")
+                )
+              } catch {
+                case e: Exception =>
+                  logger.debug("error in uploading metrics to server")
+                  logger.debug("The error is ", e)
+              }
+            case _ => ()
+          }
+        }
+      case _ => ()
+    }
+  }
 
   def stringifyJson(): String = {
     val mapper = JsonMapper.builder().build()
