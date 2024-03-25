@@ -2,8 +2,8 @@
  * This file is part of Privado OSS.
  *
  * Privado is an open source static code analysis tool to discover data flows in the code.
- * Copyright (C) 2022 Privado, Inc.
- *
+ * Copyright (C) 2022 Privado, Inc
+ 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
