@@ -126,7 +126,7 @@ object Constants {
   // Rule ids
   val internalAPIRuleId   = "Sinks.API.InternalAPI"
   val jmsConsumerRuleId   = "Messaging.Service.JMS.Consumer"
-  val kafkaConsumerRuleId = "Messaging.Queue.Kafka.Consumer"
+  // val kafkaConsumerRuleId = "Messaging.Queue.Kafka.Consumer"
   val cookieWriteRuleId   = "Storages.Web.Cookie.Write"
   val cookieSourceRuleId  = "Data.Sensitive.OnlineIdentifiers.Cookies"
   val ignoredSinks        = "ignoredSinks"
