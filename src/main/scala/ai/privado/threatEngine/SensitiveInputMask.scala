@@ -65,7 +65,6 @@ object SensitiveInputMask {
     "Data.Sensitive.NationalIdentificationNumbers.SocialSecurityNumber",
     "Data.Sensitive.NationalIdentificationNumbers.PANNumber",
     "Data.Sensitive.NationalIdentificationNumbers.AadharNumber",
-    "Data.Sensitive.PersonalIdentification.EmployeeCode",
     "Data.Sensitive.VehicleData.VehicleRegistrationNumber",
     "Data.Sensitive.VehicleData.LicensePlate"
   )
