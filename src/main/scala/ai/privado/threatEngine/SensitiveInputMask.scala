@@ -67,7 +67,6 @@ object SensitiveInputMask {
     "Data.Sensitive.NationalIdentificationNumbers.EmployeeCode",
     "Data.Sensitive.NationalIdentificationNumbers.AadharNumber",
     "Data.Sensitive.VehicleData.VehicleRegistrationNumber",
-    "Data.Sensitive.VehicleData.LicensePlate"
   )
 
   /** Fetch all the violations for unmasked sensitive input
