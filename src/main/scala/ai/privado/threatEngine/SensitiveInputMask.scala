@@ -48,7 +48,6 @@ object SensitiveInputMask {
 
   private val sensitiveDataElementsForMasking: Set[String] = Set(
     "Data.Sensitive.AccountData.AccountID",
-    "Data.Sensitive.AccountData.AccountPassword",
     "Data.Sensitive.BackgroundCheckDetails.CompensationHistory",
     "Data.Sensitive.BackgroundCheckDetails.CreditHistory",
     "Data.Sensitive.FinancialData.BankAccountDetails",
