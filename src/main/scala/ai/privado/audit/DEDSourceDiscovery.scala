@@ -43,10 +43,6 @@ object DEDSourceDiscoveryUtils {
     lang match {
       case Language.JAVASCRIPT =>
         "(?i)((<anon-class>|<lambda>|_computed_object_property_)\\d+|promise|i18n|ajv|async|axios|connectdb|require.{0,1}|express|moment|document|css|children|style|ref|props|success|route|state|.*reducer.{0,1}|action|link|render|onclick|hasOwnProperty|stringify|date|use(state|effect|dispatch|form|selector|query|memo|router|swrconfig)|request|send|form|loading|dispatch|ngif|ngforof|inject|component|router|validators|formgroup|formcontrol|subscribe|observable|jquery|vue|react|angular|.*[.](js|css|ts))"
-      case Language.PYTHON =>
-        "(?i)(<module>|.*<meta>|.*_tmp\\d+|print|boto.{0,1}|s3|request.{0,1}|classmethod|hasattr|int32|eval|cursor|append|now|close|system|pid|strip|add|acknowledged|apply_async|limit|statusCode|extend|list_objects.{0,6}|pytest|datetime|pandas|numpy|scipy|sklearn|matplotlib|flask|django|argparse|os|sys|format_exc|read|std(out|in|err)|exit|compile|open)"
-      case Language.JAVA | Language.KOTLIN =>
-        "(?i)(system|out|buf|(com|io|org|net|androidx|software|io)[.]{1}.*|printstream|scanner|stringbuilder|thread|exception|bufferedreader|inputstream|outputstream|integer|character)"
       case Language.GO =>
         "(?i)(context|block|nonce|syscall|buf|fmt|http|log|os|io|error|http|httpclient|httprequest|httpresponse)"
       case Language.PHP =>
